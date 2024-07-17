@@ -2,12 +2,10 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   daisyui: {
-    themes: ["cupcake"],
+    themes: ["nord"],
   },
   theme: {
-    extend: {
-      fontFamily: { sans: ["Roboto", "sans-serif"] },
-    },
+    extend: {},
   },
   plugins: [require("daisyui")],
 };
