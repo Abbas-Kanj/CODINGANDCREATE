@@ -31,6 +31,17 @@ const AudioPlayer = () => {
     }
   };
 
+  const whilePlaying = () => {
+    progressBar.current.value = audio.current.currentTime;
+    setCurrentTime(progressBar.current.value);
+    animation.current = requestAnimationFrame(whilePlaying);
+  };
+
+  const changeRange = () => {
+    audio.current.currentTime = progressBar.current.value;
+    setCurrentTime(progressBar.current.value);
+  };
+
   return (
     <section className="flex items-center justify-between px-5 gap-4 bg-white h-20 rounded-xl">
       <div className="flex gap-3">
