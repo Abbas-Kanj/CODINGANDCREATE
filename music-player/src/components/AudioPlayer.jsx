@@ -12,6 +12,25 @@ import audio1 from "../assets/audio/NEFFEX - Badass [Lyric Video].m4a";
 import { FaHeart } from "react-icons/fa";
 
 const AudioPlayer = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [duration, setDuraduration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const audio = useRef();
+  const progressBar = useRef();
+  const animation = useRef();
+
+  const togglePlayPause = () => {
+    const prevValue = isPlaying;
+    setIsPlaying(!prevValue);
+    if (!prevValue) {
+      audio.current.play();
+      animation.current = requestAnimationFrame(whilePlaying);
+    } else {
+      audio.current.pause();
+      cancelAnimationFrame(animation.current);
+    }
+  };
+
   return (
     <section className="flex items-center justify-between px-5 gap-4 bg-white h-20 rounded-xl">
       <div className="flex gap-3">
@@ -46,7 +65,11 @@ const AudioPlayer = () => {
           onChange={changeRange}
           className="w-[700px] h-auto bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-slate-300 mx-2"
         />
-        <p>{duration && !isNaN(duration) && calculateTime(duration)}</p>
+        <p>
+          {duration && !isNaN(duration) && calculateTime(duration)
+            ? calculateTime(duration)
+            : "00:00"}
+        </p>
       </div>
       <div className="flex gap-3">
         <FaHeart className="size-6 fill-red-600 cursor-pointer hover:fill-red-400" />
