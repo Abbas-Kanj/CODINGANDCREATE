@@ -42,6 +42,19 @@ const AudioPlayer = () => {
     setCurrentTime(progressBar.current.value);
   };
 
+  useEffect(() => {
+    const seconds = Math.floor(audio.current.duration);
+    setDuraduration(seconds);
+  }, [audio?.current?.loadedmetadata, audio?.current?.readyState]);
+
+  const calculateTime = (secs) => {
+    const minutes = Math.floor(secs / 60);
+    const returnedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+    const seconds = Math.floor(secs % 60);
+    const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+    return `${returnedMinutes}:${returnedSeconds}`;
+  };
+
   return (
     <section className="flex items-center justify-between px-5 gap-4 bg-white h-20 rounded-xl">
       <div className="flex gap-3">
