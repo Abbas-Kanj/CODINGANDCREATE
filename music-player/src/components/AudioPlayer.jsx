@@ -16,7 +16,10 @@ const AudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuraduration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+
+  // Redux states
   const track = useSelector((state) => state.track.src);
+  const togglePlay = useSelector((state) => state.track.togglePlay);
 
   // Refs
   const audio = useRef();
@@ -58,6 +61,15 @@ const AudioPlayer = () => {
     const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
     return `${returnedMinutes}:${returnedSeconds}`;
   };
+
+  useEffect(() => {
+    if (togglePlay && track && isPlaying == false) {
+      togglePlayPause();
+    } else if (isPlaying == true) {
+      audio.current.play();
+      animation.current = requestAnimationFrame(whilePlaying);
+    }
+  }, [togglePlay, track]);
 
   return (
     <section className="flex items-center justify-between px-5 gap-4 bg-white h-20 rounded-xl">
