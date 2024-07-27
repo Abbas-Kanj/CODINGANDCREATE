@@ -8,13 +8,17 @@ import {
   MdPause,
 } from "react-icons/md";
 import image from "../assets/images/cardib.png";
-import audio1 from "../assets/audio/NEFFEX - Badass [Lyric Video].m4a";
 import { FaHeart } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const AudioPlayer = () => {
+  // States
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuraduration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const track = useSelector((state) => state.track.src);
+
+  // Refs
   const audio = useRef();
   const progressBar = useRef();
   const animation = useRef();
@@ -78,13 +82,13 @@ const AudioPlayer = () => {
         <MdSkipNext className="size-9 fill-blue-600 cursor-pointer hover:bg-opacity-40 hover:bg-gray-300 rounded-full" />
       </div>
       <div className="flex">
-        <audio src={audio1} ref={audio} preload="meta-data"></audio>
+        <audio src={track} ref={audio} preload="meta-data"></audio>
         <p>{calculateTime(currentTime)}</p>
         <input
           type="range"
           defaultValue={0}
           min={0}
-          max={duration}
+          max={duration || ""}
           ref={progressBar}
           onChange={changeRange}
           className="w-[700px] h-auto bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-slate-300 mx-2"
