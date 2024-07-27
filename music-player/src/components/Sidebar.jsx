@@ -27,9 +27,9 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="drawer lg:drawer-open h-full gap-3">
+    <div className="drawer lg:drawer-open h-full overflow-y-hidden">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center h-full">
+      <div className="drawer-content flex flex-col h-full w-full absolute">
         <Outlet />
         <label
           htmlFor="my-drawer-2"
@@ -44,7 +44,7 @@ const Sidebar = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu text-base-content h-max w-52 lg:min-h-[686px] rounded-xl p-0 bg-white">
+        <ul className="menu text-base-content lg:min-h-[662px] w-52 rounded-xl p-0 bg-white mr-6">
           <div className="flex flex-col items-center">
             <img
               src={femaleImg}
