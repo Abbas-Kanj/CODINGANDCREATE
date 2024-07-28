@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "answers": ["A. Berlin", "B. Madrid", "C. Paris", "D. Rome"],
+    "correct_answer": "C. Paris",
+    "hint": "It's also known as the City of Light."
+  },
+  {
+    "question": "Which planet is known as the Red Planet?",
+    "answers": ["A. Earth", "B. Mars", "C. Jupiter", "D. Venus"],
+    "correct_answer": "B. Mars",
+    "hint": "This planet is famous for its reddish appearance."
+  },
+  {
+    "question": "Who wrote 'To Kill a Mockingbird'?",
+    "answers": [
+      "A. Harper Lee",
+      "B. J.K. Rowling",
+      "C. Mark Twain",
+      "D. Jane Austen"
+    ],
+    "correct_answer": "A. Harper Lee",
+    "hint": "The author shares the last name with a famous general."
+  },
+  {
+    "question": "What is the largest ocean on Earth?",
+    "answers": [
+      "A. Atlantic Ocean",
+      "B. Indian Ocean",
+      "C. Arctic Ocean",
+      "D. Pacific Ocean"
+    ],
+    "correct_answer": "D. Pacific Ocean",
+    "hint": "This ocean is on the western coast of the Americas."
+  },
+  {
+    "question": "Which element has the chemical symbol 'O'?",
+    "answers": ["A. Oxygen", "B. Gold", "C. Osmium", "D. Iron"],
+    "correct_answer": "A. Oxygen",
+    "hint": "This element is essential for breathing."
+  }
+]
