@@ -1,6 +1,6 @@
 import React from "react";
 
-const HeroSection = () => {
+const HeroSection = ({ setShowQuizBox }) => {
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row">
@@ -11,7 +11,12 @@ const HeroSection = () => {
         <div>
           <h1 className="text-5xl font-bold">Welcome to Quiz App</h1>
           <p className="py-6">Ready to test your knowledge?</p>
-          <button className="btn btn-primary">Get Started</button>
+          <button
+            className="btn btn-primary"
+            onClick={() => setShowQuizBox(true)}
+          >
+            Get Started
+          </button>
         </div>
       </div>
     </div>
