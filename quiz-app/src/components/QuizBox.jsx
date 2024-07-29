@@ -28,7 +28,10 @@ const QuizBox = () => {
   return (
     <section className="flex flex-col mt-28 mx-96 glass p-6 rounded-xl gap-7">
       {questions.length === questionIndex ? (
-        <FinalResult scoreCounter={scoreCounter} />
+        <FinalResult
+          scoreCounter={scoreCounter}
+          setQuesionIndex={setQuesionIndex}
+        />
       ) : (
         <>
           <Questions
