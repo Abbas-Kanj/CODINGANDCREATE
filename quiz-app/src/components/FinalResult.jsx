@@ -1,7 +1,12 @@
 import React from "react";
 
-export const FinalResult = ({ scoreCounter, setQuesionIndex }) => {
+export const FinalResult = ({
+  scoreCounter,
+  setQuesionIndex,
+  setScoreCounter,
+}) => {
   const resetQuiz = () => {
+    setScoreCounter(0);
     setQuesionIndex(0);
     return;
   };

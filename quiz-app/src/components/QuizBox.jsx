@@ -31,6 +31,7 @@ const QuizBox = () => {
         <FinalResult
           scoreCounter={scoreCounter}
           setQuesionIndex={setQuesionIndex}
+          setScoreCounter={setScoreCounter}
         />
       ) : (
         <>
